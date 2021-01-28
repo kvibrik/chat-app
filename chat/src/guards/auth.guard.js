@@ -1,7 +1,7 @@
 import router from '@/router';
 
 export default function authGuard() {
-  const isAuth = true;
+  const isAuth = false;
   const authRoutes = ['Login'];
 
   router.beforeEach((to, from, next) => {
