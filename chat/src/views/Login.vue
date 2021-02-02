@@ -5,13 +5,19 @@
         <img src="@/assets/login-page-bg.png" alt="login-page-bg" />
       </div>
       <!-- LoginForm -->
+      <LoginForm />
     </div>
   </div>
 </template>
 
 <script>
+import LoginForm from '@/components/LoginForm.vue';
+
 export default {
   name: 'Login',
+  components: {
+    LoginForm,
+  },
 };
 </script>
 
