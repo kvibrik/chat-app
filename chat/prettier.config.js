@@ -1,5 +1,5 @@
 module.exports = {
-  printWidth: 100,
+  printWidth: 80,
   singleQuote: true,
   trailingComma: 'all',
   bracketSpacing: true,
@@ -8,4 +8,5 @@ module.exports = {
   semi: true,
   endOfLine: 'auto',
   arrowParens: 'always',
+  proseWrap: 'always',
 };
