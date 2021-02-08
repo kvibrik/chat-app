@@ -1,5 +1,8 @@
 import mutations from '@/store/mutations';
-import { firebaseLogin } from '@/services/firebase/auth.service';
+import {
+  firebaseLogin,
+  firebaseLogout,
+} from '@/services/firebase/auth.service';
 
 const { IS_LOGGED_IN, LOGIN_LOADER } = mutations;
 
@@ -37,6 +40,13 @@ const authStore = {
         console.log(err);
       } finally {
         commit(LOGIN_LOADER, false);
+      }
+    },
+    async logout() {
+      try {
+        await firebaseLogout();
+      } catch (err) {
+        console.log(err);
       }
     },
   },
