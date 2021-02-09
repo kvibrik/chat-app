@@ -4,6 +4,7 @@ import firebase from '@/plugins/firebase';
 // import authGuard from '@/guards/auth.guard';
 import router from '@/router';
 import auth from './modules/auth';
+import notify from './modules/notify';
 
 Vue.use(Vuex);
 
@@ -13,6 +14,7 @@ const store = new Vuex.Store({
   actions: {},
   modules: {
     auth,
+    notify,
   },
 });
 
