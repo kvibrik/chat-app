@@ -1,8 +1,18 @@
 <template>
   <div id="app">
+    <Notifier />
     <router-view />
   </div>
 </template>
+
+<script>
+import Notifier from '@/components/Notification.vue';
+
+export default {
+  name: 'App',
+  components: { Notifier },
+};
+</script>
 
 <style>
 body {
