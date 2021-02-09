@@ -21,7 +21,6 @@ const store = new Vuex.Store({
 });
 
 firebase.auth().onAuthStateChanged((userData) => {
-  console.log('onAuthStateChange', userData);
   store.dispatch('setIsLoggedInState', Boolean(userData));
   store.dispatch('setUserState', userData);
 
