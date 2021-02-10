@@ -1,14 +1,15 @@
 const express = require('express');
 const app = express();
-const http = require('http').createServer(app);
-const io = require('socket.io')(http);
+const UserController = require('./routes/user');
 
-io.on('connection', socket => {
-  console.log('new user connected');
-});
-
+const ROUTES = {
+  users: 'api/users',
+};
 const PORT = 3000;
 
-http.listen(PORT, () => {
+app.use(express.json());
+app.use(ROUTES.users, UserController);
+
+app.listen(PORT, () => {
   console.log(`Server up and running, PORT: ${PORT}`);
 });
