@@ -7,6 +7,8 @@ async function authMiddleware(req, res, next) {
 
     const decodedToken = await auth.verifyToken(token);
     console.log(decodedToken);
+    req.locals = { email: decodedToken.email };
+
     return next();
   } catch (err) {
     return res.status(401).send(err);
